@@ -1,2 +1,2 @@
-# CNYT_CUANTICA_BASICA
+# CUANTICA BASICA
 Teoria Cuantica Basica
