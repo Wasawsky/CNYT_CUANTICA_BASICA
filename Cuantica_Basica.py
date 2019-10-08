@@ -1,5 +1,10 @@
 from Libreria.Library.Calculadora import *
+from Libreria import *
 
+def calcularParticulaPosicion(ket,X):
+    return Simulador_Sistema_Cuantico.detectarParticula(ket,X)
+def transitarVectorVector(ket,ket2):
+    return Simulador_Sistema_Cuantico.detectarParticula(ket,ket2)
 def valorEsperado(obs,ket):
     """ Recibo  observable
                 ket
@@ -18,14 +23,13 @@ def varianzaObservable(obs,ket):
         y calculo la varianza del estado
     """
     cal=Calculadora()
-    delta=
+    nve=cal.multiplicacion(valorEsperado(obs,ket),(-1,0))
+    mve=cal.multiplicacionEscalarMatriz(cal.matrizIdentidad(len(obs)),nve)
+    delta=cal.sumaMatrices(obs,mve)
+    deltaCuadrado=cal.multiplicacionMatrizMatriz(delta,delta)
+    var=valorEsperado(deltaCuadrado,ket)
+    return var
 
 
-obs=[]
-for i in range(2):
-    vf=[tuple(map(float, x.split(","))) for x in (input().split(" "))]
-    obs.append(vf)
-ket=[tuple(map(float, x.split(","))) for x in (input().split(" "))]
-print(valorEsperado(obs,ket))
-    
+ 
     

@@ -1,0 +1,7 @@
+obs=[]
+for i in range(2):
+    vf=[tuple(map(float, x.split(","))) for x in (input().split(" "))]
+    obs.append(vf)
+ket=[tuple(map(float, x.split(","))) for x in (input().split(" "))]
+#print(valorEsperado(obs,ket))
+#print(varianzaObservable(obs,ket))  
