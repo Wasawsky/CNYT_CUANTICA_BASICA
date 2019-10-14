@@ -1,16 +1,8 @@
-#Calculadora de Numeros complejos
-#Version 2.0
-#MICHAEL BALLESTEROS
-#2019-2
-
 import math
-
-#---------------------------------------------------------------------
 
 class Calculadora:
     def __init__(self):
         return
-
     def suma(self,c1,c2):
         """Recibo 2 complejos y los suma -> complejo
         """
@@ -62,10 +54,6 @@ class Calculadora:
         p = self.modulo(c)
         ang = self.fase(c)
         return (p,ang)
-
-    #---------------------------------------------------------------------
-
-
     def sumaVectores(self,v1,v2):
         """Recibo 2 vectores complejos  y sumo -> vector complejo
         """
@@ -218,4 +206,29 @@ class Calculadora:
             for k in range(len(m3[0])):
                 m3[j][k]=self.multiplicacion(m1[j//n][k//m],m2[j%n][k%m])
         return m3
-    #---------------------------------------------------------------------
+
+class CalculadoraAvanzada:
+    def __init__(self):
+        return
+    def detectarParticula(self,ket,X):
+        """ Recibo  vector ket de estado
+                    posicion a determinar la probabilidad de la particula
+            y calculo la probabilidad de que la particula este en la posicion -> entero
+        """
+        cal=Calculadora()
+        normaKet=cal.normaMatriz([ket])
+        normaComplejo=cal.normaMatriz([[ket[X]]])
+        return (normaComplejo**2)/(normaKet**2)
+    def transitarVector(self,ket,ket2):
+        """ Recibo  vector ket de estado
+                    vector ket de estado
+            y determino la probabilidad de transitar del primer vector al segundo
+        """
+        cal=Calculadora()
+        ket1=cal.transpuesta([ket])
+        bra=cal.matrizConjugada([ket2])
+        car=cal.multiplicacionMatrizMatriz(bra,ket1)[0][0]
+        normaBra=cal.normaMatriz(bra)
+        normaket=cal.normaMatriz(ket1)
+        car2=(normaBra*normaket,0)
+        return cal.division(car,car2)
