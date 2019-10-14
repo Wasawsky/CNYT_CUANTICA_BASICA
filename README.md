@@ -17,6 +17,7 @@ Se considera la dinamica del sistema.
 El estado actual de la partícula ndimensional puede representarse en un vector de columna compleja [c0, c1,. . . , cn − 1] T.
 Sera nombrado como *ket* y cada estado de nuestro sistema sera representado por un elemento de Cn como
 ![aca](https://user-images.githubusercontent.com/45296448/65923022-ee18e600-e3ac-11e9-8aa2-48ae0af4e418.PNG)
+
 Asi como un observable, una matriz de Cn elementos representado por la letra Ω
 
 ## Como usar
@@ -34,6 +35,7 @@ Puede instalarala de la siguiente manera:
         $ py -m pip install numpy
         
 3. Cierre la consola.
+
 Despues de tenerlo, puede crear un archivo .py en el mismo directorio del archivo Cuantica_Basica.py
 
 Importe la libreria en el nuevo archivo y use las operaciones de manera directa
